@@ -1,0 +1,51 @@
+<div class="col-lg-12">
+    <app-iq-card>
+      <div card-header class="iq-header-title">
+        <h4 class="card-title">Delivery History</h4>
+      </div>
+      <div card-header class="iq-card-header-toolbar d-flex align-items-center">
+        <div class="dropdown"><span class="dropdown-toggle text-primary" id="dropdownMenuButton5" data-toggle="dropdown">
+          <i class="ri-more-2-fill"></i>
+        </span>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="javascript:void (0);"><i class="ri-eye-fill mr-2"></i>View</a>
+          <a class="dropdown-item" href="javascript:void (0);"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
+          <a class="dropdown-item" href="javascript:void (0);"><i class="ri-pencil-fill mr-2"></i>Edit</a>
+          <a class="dropdown-item" href="javascript:void (0);"><i class="ri-printer-fill mr-2"></i>Print</a>
+          <a class="dropdown-item" href="javascript:void (0);"><i class="ri-file-download-fill mr-2"></i>Download</a>
+        </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table mb-0 table-borderless">
+          <thead>
+          <tr>
+            <th scope="col">Package No.</th>
+            <th scope="col">Date</th>
+            <th scope="col">Delivery</th>
+            <th scope="col">Status</th>
+            <th scope="col">Location</th>
+            <th scope="col">Progress</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let order of orders; let i=index;">
+            <td>{{order.id}}</td>
+            <td>{{order.date}}</td>
+            <td>{{order.delivery}}</td>
+            <td>
+              <div class="badge badge-pill badge-{{getOrderStatus(order.orderStatus)}}">{{order.orderStatus}}</div>
+            </td>
+            <td>{{order.location}}</td>
+            <td>
+              <progressbar class="iq-progress-bar" [value]="order.progress" [type]="getOrderStatus(order.orderStatus)" ></progressbar>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </app-iq-card>
+  </div>
+</div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "/pay/*": {
+    "target": "https://www.sandbox.paypal.com/cgi-bin/",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

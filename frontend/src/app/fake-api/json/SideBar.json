@@ -1,0 +1,113 @@
+{
+	"data": [
+
+    {
+      "title": "Projects Dashboard",
+      "isHeading": false,
+      "isActive": false,
+      "link": "/",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-home-4-line",
+      "children": [
+        {
+          "title": "Cedar Projects",
+          "isActive": false,
+          "link": "/cedarproject",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+      
+            {
+          "title": "History",
+          "isActive": false,
+          "link": "/cedarhistory",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }
+
+      ]
+    },
+
+    {
+      "title": "MyCedar Wallet",
+      "isHeading": false,
+      "isActive": false,
+      "link": "",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-wallet-3-fill",
+      "children": [
+        {
+          "title": "Top Up",
+          "isActive": false,
+          "link": "/topUp",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+       {
+          "title": "History",
+          "isActive": false,
+          "link": "/history-wallet",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+        {
+          "title": "Convert coin",
+          "isActive": false,
+          "link": "/convert-to-USD",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "title": "MyCedar Assets",
+      "isHeading": false,
+      "isActive": false,
+      "link": "",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-exchange-funds-line",
+      "children": [
+        {
+          "title": "Cedarcoin",
+          "isActive": false,
+          "link": "/crypto",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+        {
+          "title": "Bitcoin",
+          "isActive": false,
+          "link": "/btc",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }, {
+          "title": "Ether",
+          "isActive": false,
+          "link": "/eth",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+        {
+          "title": "BCH",
+          "isActive": false,
+          "link": "/bch",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }
+      ]
+    }
+
+  ]
+}

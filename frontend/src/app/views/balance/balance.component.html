@@ -1,0 +1,18 @@
+<h3>Top Up</h3>
+<p>Cedracoin.com Now let's you Top up USD Directly from your credit cart</p>
+
+<div class="row">
+  <div class="col-sm-12 col-lg-6">
+    <app-iq-card
+      [isCardHeader]="false"
+      cardBodyClass="iq-card-body border-0 border text-center"
+    >
+      <h2 class="font-size-20 font-weight-bold text-uppercase">Buy Crypto</h2>
+
+      <input type="number" #montant id="name" name="name" placeholder=" £  0" />
+      <br />
+
+      <a (click)="topup(montant.value)" class="btn btn-primary mt-5"> Top Up</a>
+    </app-iq-card>
+  </div>
+</div>

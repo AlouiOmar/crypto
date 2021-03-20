@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-lg-4">
+    <app-iq-card cardClass="iq-card animation-card" [isCardHeader]=false cardBodyClass="iq-card-body p-0">
+      <div class="an-text">
+        <span>Total Balance </span>
+        <h2 class="display-4 font-weight-bold">$<span>2M</span></h2>
+      </div>
+      <div class="an-img ">
+        <div class="bodymovin">
+          <ng-lottie [options]="optionsData"></ng-lottie>
+        </div>
+      </div>
+    </app-iq-card>
+  </div>
+  <div class="col-lg-8">
+    <app-iq-card cardClass="iq-card overflow-hidden" cardBodyClass="iq-card-body pb-0">
+      <div card-header class="iq-header-title">
+        <h4 class="card-title">Monthly sales trend </h4>
+      </div>
+      <div card-header class="iq-card-header-toolbar d-flex align-items-center">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link active">Latest</a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link">Month</a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0);" class="nav-link">All Time</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex justify-content-around">
+        <div class="price-week-box mr-5">
+          <span>Current Week</span>
+          <h2>$<span class="counter">180 </span><i class="ri-funds-line text-success font-size-18"></i></h2>
+        </div>
+        <div class="price-week-box">
+          <span>Previous Week</span>
+          <h2>$<span class="counter">52.55</span><i class="ri-funds-line text-danger font-size-18"></i></h2>
+        </div>
+      </div>
+
+      <app-apex-chart card-bottom ids="chart5" [options]="chart5"></app-apex-chart>
+    </app-iq-card>
+  </div>
+
+</div>
+
+

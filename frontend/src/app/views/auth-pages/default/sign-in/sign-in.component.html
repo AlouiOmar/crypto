@@ -1,0 +1,34 @@
+<div class="sign-in-from">
+  <h1 class="mb-0">Sign in</h1>
+  <p>Enter your username and password to access admin panel.</p>
+  <form class="mt-4" (submit)="login()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="username" name="username" class="form-control mb-0" id="exampleInputEmail1" placeholder="Enter username" #username="ngModel" [(ngModel)]="credentials.username">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <a href="javascript:void(0);" class="float-right">Forgot password?</a>
+      <input type="password" name="password" class="form-control mb-0" id="exampleInputPassword1" placeholder="Password" #password="ngModel"[(ngModel)]="credentials.password" > 
+    </div>
+    <div class="d-inline-block w-100">
+      <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Remember Me</label>
+      </div>
+      <div class="alert alert-danger" *ngIf="errorMsg">Username or password is incorrect</div>
+      <div class="alert alert-danger" *ngIf=" ( username.touched) && ( !credentials.username ) ">Please fill the username field</div>
+      <div class="alert alert-danger" *ngIf=" ( password.touched) && ( !credentials.password ) ">Please fill the password field</div>
+
+      <button type="submit" class="btn btn-primary float-right"  [disabled]="!credentials.password || !credentials.username"  >Sign in</button>
+    </div>
+    <div class="sign-info">
+      <span class="dark-color d-inline-block line-height-2">Don't have an account? <a href="javascript:void(0);">Sign up</a></span>
+      <ul class="iq-social-media">
+        <li><a href="javascript:void(0);"><i class="ri-facebook-box-line"></i></a></li>
+        <li><a href="javascript:void(0);"><i class="ri-twitter-line"></i></a></li>
+        <li><a href="javascript:void(0);"><i class="ri-instagram-line"></i></a></li>
+      </ul>
+    </div>
+  </form>
+</div>

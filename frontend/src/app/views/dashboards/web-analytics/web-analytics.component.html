@@ -1,0 +1,133 @@
+<div class="row row-eq-height">
+  <!-- Content Top Banner Start -->
+  <div class="col-md-12 col-lg-8">
+    <app-iq-card cardClass="iq-card bg-primary sb-top-banner-card" cardBodyClass="iq-card-body pt-5 pb-5" [isCardHeader]=false>
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <h2 class="text-white">Welcom to Cedarcoin</h2>
+          <p class="text-white">Cedarcoin is a coin created to support Lebanon and allows Lebanese expatriates to support an alternative development fund through a new funding mechanism for institutions and charities.</p>
+          <a href="#"> <button type="button" class="btn iq-bg-primary"> Read More </button></a>
+        </div> 
+        <div class="col-md-6 position-relative">
+          <div class="an-img-two">
+            <div class="bodymovin">
+              <ng-lottie [options]="optionsData"></ng-lottie> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </app-iq-card>  
+    </div>
+  <div class="col-md-12 col-lg-4">
+    <app-iq-card [isCardHeader]=false>
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="font-size-14">Total Balance</span>
+          <h3>{{balance}} $</h3>
+          <div class="iq-progress-bar-linear d-inline-block w-100 float-left mt-3">
+            <progressbar class="iq-progress-bar" value="90" type="primary" ></progressbar>
+          </div>
+        </div>
+      </div>
+    </app-iq-card>
+    <app-iq-card [isCardHeader]=false>
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="text-danger float-right">+0.18%<i class="ri-arrow-down-fill"></i></span>
+          <span class="font-size-14">Bitcoin</span>
+          <h3>27 976,689 TND
+          </h3>
+          <div class="iq-progress-bar-linear d-inline-block w-100 float-left mt-3">
+            <div class="iq-progress-bar">
+              <progressbar class="iq-progress-bar" value="90" type="danger" ></progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-iq-card>
+  </div>
+   
+  <br>
+
+  
+        
+          
+          
+      <div class="col-lg-6 col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <app-iq-card cardClass="iq-card wow fadeInUp" data-wow-delay="0.6s">
+              <div card-header class="iq-header-title">
+                <h4 class="card-title">your portfolio</h4>
+              </div> 
+               <div card-header class="iq-card-header-toolbar d-flex align-items-center">
+                <div class="dropdown">
+                  <span class="dropdown-toggle text-primary" id="dropdownMenuButton2" data-toggle="dropdown">View All
+                  </span>
+                  <div class="dropdown-menu dropdown-menu-right"
+                       aria-labelledby="dropdownMenuButton2">
+                    <a class="dropdown-item" href="javascript:void(0);"><i
+                      class="ri-eye-fill mr-2"></i>View</a>
+                      <a class="dropdown-item" href="javascript:void(0);"><i class="ri-printer-fill mr-2"></i>Print</a>
+                    <a class="dropdown-item" href="javascript:void(0);"><i
+                      class="ri-file-download-fill mr-2"></i>Download</a>
+                  </div>
+                </div>
+              </div>
+             
+      <div class="table-responsive">
+        <!-- Projects table -->
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of USD; let i=index;">
+          <!--<td>{{row.img} }</td> -->
+            <td>{{row.name}}</td>
+             <td>
+              <i class=" text-{{row.color}} mr-3"></i> {{row.balance}}        
+               </td>
+           
+            <td>{{row.bal_coin}}</td>
+            <td>{{row.bal_TND}}</td>
+            
+            
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+    </app-iq-card>
+    
+  </div>
+  
+  
+</div>
+</div>
+<div class="col-lg-5 col-md-8">
+   
+        <app-iq-card [isCardHeader]=false cardBodyClass="iq-card-body border-0 border text-center">
+          <h2 class="font-size-20 font-weight-bold text-uppercase">Total Balance</h2>
+          <h2 class="mb-4 display-3 font-weight-bolder"><small
+            class="font-size-16 align-text-top">$ </small> {{balance}} <small
+            class="font-size-14 text-muted">USD </small></h2>
+          <ul class="list-unstyled line-height-4 mb-0">
+            <li>Please take the time for </li>
+             <li>top up your account </li>
+        
+          </ul>
+
+          <input  type="number" min="1" step="5" name="amount"  class="form-control mb-0" id="amount" placeholder="Enter amount" [(ngModel)]="amount">
+          <div class="alert alert-danger m-2" *ngIf="amount < 0">the amount must be a positive number</div>
+          <button
+           
+           (click)="pay()" class="btn btn-primary mt-5" [disabled]="!amount || amount<0"> Top Up</button>
+    
+        </app-iq-card>
+    <!--  href="http://localhost:4000/api/pay/payment" -->
+    <!--  onclick = "window.open(this.href); return false;" -->
+  </div>
+       
