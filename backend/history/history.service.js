@@ -9,13 +9,20 @@ module.exports = {
     getById,
     create,
     update,
+    getUserHistory,
     delete: _delete
 };
 
 
 
 async function getAll() {
-    return await db.History.findAll();
+    return await db.History.findAll({
+        include: [
+            { model: db.Project },
+            { model: db.User }
+        
+        ]
+      });
 }
 
 async function getById(id) {
@@ -51,6 +58,21 @@ async function _delete(id) {
 
 async function getHistory(id) {
     const history = await db.History.findByPk(id);
+    if (!history) throw 'History not found';
+    return history;
+}
+
+async function getUserHistory(id) {
+    const history = await db.History.findAll({
+        include: [
+            { model: db.Project }
+          
+          ],
+        where: {
+            id_user: id
+        },
+        
+      });
     if (!history) throw 'History not found';
     return history;
 }

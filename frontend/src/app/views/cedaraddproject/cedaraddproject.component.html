@@ -1,0 +1,85 @@
+<div class="row">
+  <app-iq-card [isCardHeader]="false">
+    <div class="col-lg-12">
+      <div class="container">
+        <h2>Form Validation</h2>
+        <p>
+          In this example, we use <code>.was-validated</code> to indicate what's
+          missing before submitting the form:
+        </p>
+        <form
+          [formGroup]="form"
+          (submit)="onSubmit(form.value)"
+          class="was-validated"
+        >
+          <div class="form-group">
+            <label for="name">Project name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              minlength="5"
+              placeholder="Enter name"
+              formControlName="name"
+              name="name"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                form.controls['name'].touched && !form.controls['name'].valid
+              "
+            >
+              Please fill out this field.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="location"
+              placeholder="Enter location"
+              formControlName="location"
+              name="location"
+              required
+            />
+            <div class="valid-feedback">Valid.</div>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                form.controls['location'].touched &&
+                !form.controls['location'].valid
+              "
+            >
+              Please fill out this field.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea
+              class="form-control"
+              id="description"
+              placeholder="Enter description"
+              name="description"
+              formControlName="description"
+              required
+            ></textarea>
+            <div class="valid-feedback">Valid.</div>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                form.controls['description'].touched &&
+                !form.controls['description'].valid
+              "
+            >
+              Please fill out this field.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div></app-iq-card
+  >
+</div>

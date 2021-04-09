@@ -8,7 +8,9 @@ function model(sequelize) {
         transactionType: { type: DataTypes.STRING, allowNull: false },
         amount: { type: DataTypes.STRING, allowNull: false },
         date: { type: DataTypes.STRING, allowNull: false },
-        id_user: { type: DataTypes.INTEGER, allowNull: false}
+        id_user: { type: DataTypes.INTEGER, allowNull: false},
+        id_project: { type: DataTypes.INTEGER, allowNull: true}
+
         
     };
 

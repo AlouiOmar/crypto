@@ -1,5 +1,5 @@
 import { HistoryService } from './services/history.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpModule } from "@angular/http";
@@ -34,6 +34,7 @@ import { IndexComponent } from './layouts/auth-layout/index/index.component';
 import { AuthGuard } from "./services/auth-guard.service";
 import { AuthService } from "./services/auth.service";
 import { PayService } from './services/pay.service';
+import { ProjectService } from './services/project.service';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { PayService } from './services/pay.service';
     HttpModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     SofboxModule,
@@ -75,7 +77,8 @@ import { PayService } from './services/pay.service';
               WebServices,
               AuthService,
               HistoryService,
-              PayService
+              PayService,
+              ProjectService
   ],
   bootstrap: [AppComponent],
 })

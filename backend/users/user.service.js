@@ -10,6 +10,7 @@ module.exports = {
     create,
     update,
     updateBalance,
+    subBalance,
     delete: _delete
 };
 
@@ -74,6 +75,18 @@ async function updateBalance(id, params) {
 
     console.log(user.balance)
     user.balance=user.balance+params;
+    // copy params to user and save
+    Object.assign(user, params);
+    await user.save();
+
+    return omitHash(user.get());
+}
+
+async function subBalance(id, params) {
+    const user = await getUser(id);
+
+    console.log(user.balance)
+    user.balance=user.balance-params;
     // copy params to user and save
     Object.assign(user, params);
     await user.save();

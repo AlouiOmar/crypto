@@ -1,7 +1,9 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {AnimationOptions} from 'ngx-lottie';
 import jQuery from 'jquery';
 import { Router } from '@angular/router';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-cedarproject',
@@ -9,18 +11,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./cedarproject.component.css']
 })
 export class CedarprojectComponent implements OnInit {
-   selected = [];
-
+   selected;
+   currentId;
+   description;
+   amount;
   optionsData: AnimationOptions = {
     path: '/assets/images/small/data2.json'
   };
-  dates = [
-    {date: 1, week: 'new hospital'
+  data = [
+    /* {date: 1, week: 'new hospital'
    },
     {date: 2, week: 'university'},
     {date: 3, week: 'infrastructure'},
     {date: 4, week: 'Homless people'},
-    {date: 5, week: ''}
+    {date: 5, week: ''} */
   ];
 
   slideConfig = {
@@ -50,18 +54,52 @@ export class CedarprojectComponent implements OnInit {
     prevArrow: '<a href="javascript:void(0);" class="ri-arrow-right-s-line right"></a>',
   };
 
-  constructor(private router:Router) {
+  constructor(private router:Router,private projectService:ProjectService, private authService:AuthService) {
 
    }
 
   ngOnInit() {
+    this.selected=false;
+    this.description="Select a project to get started"
+    this.projectService.getAll().subscribe((dataa)=>{console.log(dataa);
+    this.data=dataa;
+    })
   }
 newpage(){
-  for(let i=0;i<this.dates.length;i++){
-    if(this.dates[i].date=1){
+  
+  for(let i=0;i<this.data.length;i++){
+    
+      
+/*     if(this.dates[i].date=1){
       this.router.navigateByUrl('/convert')
-    }
+    } */
   }
 
 }
+
+project(id){
+  this.selected=true;
+  this.currentId=id;
+  console.log("project clicked "+id);
+  this.projectService.getById(id).subscribe((data)=>{ this.description=data.description})
+  
+  
+}
+
+
+invest(){
+  console.log(this.currentId);
+  console.log('pay clicked');
+  console.log('amount '+ this.amount);
+  let user=this.authService.getUserDetails();
+  let info={amount:this.amount,userId: user.id,projectId: this.currentId};
+  console.log(info);
+  this.projectService.invest(info).subscribe(()=>{console.log("invest success");
+  this.projectService.getAll().subscribe((dataa)=>{console.log(dataa);
+    this.data=dataa;
+    })
+  })
+}
+
+
 }

@@ -8,6 +8,7 @@ function model(sequelize) {
         lastName: { type: DataTypes.STRING, allowNull: false },
         username: { type: DataTypes.STRING, allowNull: false },
         balance: { type: DataTypes.DOUBLE, allowNull: false },
+        role: { type: DataTypes.STRING, allowNull: false },
         hash: { type: DataTypes.STRING, allowNull: false }
     };
 

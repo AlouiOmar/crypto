@@ -24,6 +24,12 @@ export class HistoryService {
         return this.http.delete(url);
       }
 
+      public getUserHistory(id) {
+        const url='http://localhost:4000/api/history/user/'+id;
+        return this.http.get<UserDetails[]>(url);
+      }
+
+
     
 
 }

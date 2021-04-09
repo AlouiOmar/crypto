@@ -4,6 +4,7 @@ export interface UserDetails {
     lastName: string;
     username: string;
     balance: string;
+    role: string;
     hash: string;
     exp: number;
     iat: number;

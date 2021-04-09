@@ -12,10 +12,11 @@ export class ListStyle1Component implements OnInit, AfterContentInit {
   @Input() listClass =  'iq-menu';
   @Input() listItems: MenuItem[];
   @Input() display: false;
-
+  role;
   constructor() { }
 
   ngOnInit() {
+    this.role="admin"
   }
 
   activeLink(item) {

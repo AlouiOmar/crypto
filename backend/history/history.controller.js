@@ -9,6 +9,7 @@ const historyService = require('./history.service');
 
 router.post('/add', addSchema, add);
 router.get('/',  getAll);
+router.get('/user/:id',  getHistoryByUserId);
 router.get('/current', authorize(), getCurrent);
 router.get('/:id', authorize(), getById);
 router.put('/:id', authorize(), updateSchema, update);
@@ -48,6 +49,12 @@ function getCurrent(req, res, next) {
 
 function getById(req, res, next) {
     historyService.getById(req.params.id)
+        .then(history => res.json(history))
+        .catch(next);
+}
+
+function getHistoryByUserId(req, res, next) {
+    historyService.getUserHistory(req.params.id)
         .then(history => res.json(history))
         .catch(next);
 }

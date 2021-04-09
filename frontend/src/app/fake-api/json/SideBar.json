@@ -11,6 +11,14 @@
       "icon": "ri-home-4-line",
       "children": [
         {
+          "title": "Add Project",
+          "isActive": false,
+          "link": "/cedaraddproject",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+        {
           "title": "Cedar Projects",
           "isActive": false,
           "link": "/cedarproject",

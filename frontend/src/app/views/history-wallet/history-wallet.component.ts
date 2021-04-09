@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { HistoryService } from './../../services/history.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,14 +10,24 @@ import { Component, OnInit } from '@angular/core';
 export class HistoryWalletComponent implements OnInit {
 
    historyList=[];
-  constructor(private historyService:HistoryService) { }
+   role;
+  constructor(private historyService:HistoryService,private authService:AuthService) { }
 
   ngOnInit() {
+    this.role=""
     console.log('historyyyyyyy')
+    let user=this.authService.getUserDetails();
+    if(user.role=="admin"){
+      this.role="admin"
     this.historyService.getAll().subscribe((data)=>{
       console.log(data)
       this.historyList=data;
-    })
+    })}else{
+      this.historyService.getUserHistory(user.id).subscribe((data)=>{
+        console.log(data)
+        this.historyList=data;
+      })
+    }
   }
 
   delete(id){

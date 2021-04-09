@@ -39,14 +39,26 @@ import { DataService } from './shared/services/data.service';
 import { en_US, NgZorroAntdModule, NZ_MESSAGE_CONFIG } from 'ng-zorro-antd';
 import { CryptoPriceComponent } from './crypto-price/crypto-price.component';
 import { AdsComponent } from './ads/ads.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoinTestComponent } from './coin-test/coin-test.component';
 import { CurrencyListItemComponent } from './myproject/currency-list/currency-list-item/currency-list-item.component';
 import { CurrencyListComponent } from './myproject/currency-list/currency-list.component';
 import { CurrencySelectorComponent } from './myproject/currency-selector/currency-selector.component';
 import { LoadingSpinnerComponent } from './myproject/loading-spinner/loading-spinner.component';
 import { MoneyComponent } from './myproject/money/money.component';
+import { CedaraddprojectComponent } from './cedaraddproject/cedaraddproject.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatRippleModule} from '@angular/material/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -71,6 +83,7 @@ export function playerFactory() {
     BitcComponent,
     CedarcoinComponent,
     CedarprojectComponent,
+    CedaraddprojectComponent,
     MyprojectComponent,
     CedarhistoryComponent,
     CryptoDetailComponent,
@@ -99,7 +112,22 @@ export function playerFactory() {
     LottieModule.forRoot({ player: playerFactory }),
     ProgressbarModule,
     CarouselModule,
+    FormsModule,
+    ReactiveFormsModule,
     TabsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatPaginatorModule,
     NgScrollbarModule,
     NgwWowModule,
     FormsModule,

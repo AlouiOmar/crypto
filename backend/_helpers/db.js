@@ -18,8 +18,11 @@ async function initialize() {
     // init models and add them to the exported db object
     db.User = require('../users/user.model')(sequelize);
     db.History = require('../history/history.model')(sequelize);
+    db.Project = require('../project/project.model')(sequelize);
     db.User.hasMany(db.History, {foreignKey: 'id_user'})
     db.History.belongsTo(db.User, {foreignKey: 'id_user'})
+    db.Project.hasMany(db.History, {foreignKey: 'id_project'})
+    db.History.belongsTo(db.Project, {foreignKey: 'id_project'})
     // sync all models with database
     await sequelize.sync();
 }

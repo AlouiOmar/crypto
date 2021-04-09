@@ -26,6 +26,7 @@ paypal.configure({
 app.use('/api/users', require('./users/users.controller'));
 app.use('/api/history', require('./history/history.controller'));
 app.use('/api/pay', require('./pay/pay.controller'));
+app.use('/api/project', require('./project/project.controller'));
 
 // global error handler
 app.use(errorHandler);

@@ -20,6 +20,7 @@ import { CedarhistoryComponent } from './cedarhistory/cedarhistory.component';
 import { CryptoDetailComponent } from './crypto-detail/crypto-detail.component';
 import { CryptoPriceComponent } from './crypto-price/crypto-price.component';
 import { CoinTestComponent } from './coin-test/coin-test.component';
+import { CedaraddprojectComponent } from './cedaraddproject/cedaraddproject.component';
 
 
 
@@ -63,6 +64,10 @@ const routes: Routes = [
     {
       path: 'cedarproject',
       component: CedarprojectComponent
+    },
+    {
+      path: 'cedaraddproject',
+      component: CedaraddprojectComponent
     },
     
     {
